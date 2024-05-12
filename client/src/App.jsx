@@ -33,7 +33,7 @@ function App() {
     <>
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-2xl font-bold mb-4">Chat</h1>
-        <div className="bg-white h-3/5 w-3/5 shadow-md rounded-lg p-6 mb-4">
+        <div className="bg-white h-full w-full shadow-md rounded-lg p-6 mb-4">
           {messages.map((message, index) => (
             <div
               key={index}
