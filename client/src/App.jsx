@@ -1,5 +1,6 @@
 import io, { Socket } from "socket.io-client";
 import { useState, useEffect } from "react";
+import { Button } from "@nextui-org/react";
 const socket = new io("http://localhost:4000");
 
 function App() {
@@ -48,9 +49,11 @@ function App() {
                     : "bg-blue-700  text-white "
                 }`}
               >
+                {" "}
                 <span className=" text-xs table text-white text-left">
                   {message.from}
                 </span>
+
                 <span className=" text-sm">{message.body}</span>
               </p>
             </div>
@@ -64,12 +67,9 @@ function App() {
             placeholder="envia un mensaje ..."
             className="flex-grow px-4 py-2 mr-2 border rounded-lg focus:outline-none"
           />
-          <button
-            type="submit"
-            className="px-4 py-2 bg-blue-700 text-white rounded-lg"
-          >
-            Enviar
-          </button>
+          <Button color="primary" variant="ghost" type="submit">
+            enviar
+          </Button>
         </form>
       </div>
     </>
