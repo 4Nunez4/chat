@@ -42,7 +42,7 @@ function App() {
               }`}
             >
               <p
-                className={`px-4 py-2 rounded-lg table ${
+                className={`px-4 py-2 rounded-lg w-1/2 table ${
                   message.from === "yo"
                     ? "bg-blue-500 text-white ml-auto"
                     : "bg-blue-500  text-white "
