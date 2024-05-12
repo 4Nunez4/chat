@@ -31,7 +31,7 @@ function App() {
 
   return (
     <>
-      <div className="container mx-auto px-4 py-8  bg-red-900  w-6/12 shadow-md rounded-lg p-6">
+      <div className="container mx-auto px-4 py-8  bg-gray-900  w-6/12 shadow-md rounded-lg p-6">
         <h1 className="text-2xl font-bold mb-4 text-white">Chat</h1>
         <div className="bg-white h-96 w-full shadow-md rounded-lg p-6 mb-4 overflow-y-auto">
           {messages.map((message, index) => (
@@ -42,10 +42,10 @@ function App() {
               }`}
             >
               <p
-                className={`px-4 py-2 rounded-lg w-1/2 table ${
+                className={`px-4 py-2 rounded-lg w-5/12 table ${
                   message.from === "yo"
-                    ? "bg-blue-500 text-white ml-auto"
-                    : "bg-blue-500  text-white "
+                    ? "bg-blue-700 text-white ml-auto"
+                    : "bg-blue-700  text-white "
                 }`}
               >
                 <span className=" text-xs table text-white text-left">
@@ -61,11 +61,12 @@ function App() {
             type="text"
             onChange={(e) => setMessage(e.target.value)}
             value={message}
+            placeholder="envia un mensaje ..."
             className="flex-grow px-4 py-2 mr-2 border rounded-lg focus:outline-none"
           />
           <button
             type="submit"
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+            className="px-4 py-2 bg-blue-700 text-white rounded-lg"
           >
             Enviar
           </button>
