@@ -31,9 +31,9 @@ function App() {
 
   return (
     <>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-2xl font-bold mb-4">Chat</h1>
-        <div className="bg-white h-full w-full shadow-md rounded-lg p-6 mb-4">
+      <div className="container mx-auto px-4 py-8  bg-red-900  w-6/12 shadow-md rounded-lg p-6">
+        <h1 className="text-2xl font-bold mb-4 text-white">Chat</h1>
+        <div className="bg-white h-96 w-full shadow-md rounded-lg p-6 mb-4 overflow-y-auto">
           {messages.map((message, index) => (
             <div
               key={index}
@@ -45,10 +45,13 @@ function App() {
                 className={`px-4 py-2 rounded-lg table ${
                   message.from === "yo"
                     ? "bg-blue-500 text-white ml-auto"
-                    : "bg-gray-200 "
+                    : "bg-blue-500  text-white "
                 }`}
               >
-                {message.from}:{message.body}
+                <span className=" text-xs table text-white text-left">
+                  {message.from}
+                </span>
+                <span className=" text-sm">{message.body}</span>
               </p>
             </div>
           ))}
