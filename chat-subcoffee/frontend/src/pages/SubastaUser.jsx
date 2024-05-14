@@ -11,8 +11,12 @@ import {
   Input,
   CardBody,
 } from "@nextui-org/react";
+import Chat from "./Chat";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure} from "@nextui-org/react";
+
 
 function SubastaUser() {
+  const {isOpen, onOpen, onOpenChange} = useDisclosure();
   const { id } = useParams();
   const [subasta, setSubasta] = useState(null);
   const [oferta, setOferta] = useState("");
@@ -132,9 +136,27 @@ function SubastaUser() {
           </div>
         </div>
         <div className="bg-gray-200 p-4 flex-col gap-4 flex justify-center">
-          <Button className="mr-2 w-full" onClick={handleChatClick}>
-            Chat
-          </Button>
+        <Button onPress={onOpen}>Open Modal</Button>
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">Modal chat</ModalHeader>
+              <ModalBody>
+              <Chat></Chat>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+                <Button color="primary" onPress={onClose}>
+                  Action
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
           <Button onClick={handlePostulantesClick}>Ver Postulantes</Button>
         </div>
       </div>
